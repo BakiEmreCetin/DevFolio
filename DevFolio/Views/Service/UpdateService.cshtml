@@ -1,0 +1,28 @@
+﻿@model DevFolio.Models.TblService
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Servis Güncelleme Sayfası</h2>
+
+<br />
+<div class="container">
+
+    @using (Html.BeginForm("UpdateService", "Service", FormMethod.Post))
+    {
+    <form class="form-group" method="post">
+        <label>Servis Başlığı</label>
+        @Html.HiddenFor(x => x.ServiceID)
+        @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+        <br />
+        <label>Servis Resmi</label>
+        @Html.TextBoxFor(x => x.ServiceImageUrl, new { @class = "form-control" })
+        <br />
+        <label>Servis Açıklama</label>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Kaydet</button>
+    </form>
+    }
+</div>
